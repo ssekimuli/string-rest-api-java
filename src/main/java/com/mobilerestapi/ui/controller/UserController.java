@@ -1,5 +1,6 @@
 package com.mobilerestapi.ui.controller;
 
+import com.mobilerestapi.ui.model.request.UserDetailsRequestModel;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,8 +13,8 @@ public class UserController {
     public String getUser() {
         return "getUser";
     }
-    @PostMapping
-    public String createUser() {
+    @PostMapping("/create")
+    public String createUser(@RequestBody UserDetailsRequestModel userDetails) {
         return "createUser";
     }
     @PutMapping
