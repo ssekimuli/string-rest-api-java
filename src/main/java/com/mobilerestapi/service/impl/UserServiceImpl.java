@@ -1,5 +1,6 @@
 package com.mobilerestapi.service.impl;
 
+import com.mobilerestapi.service.UserService;
 import com.mobilerestapi.shared.dto.UserDto;
 import org.springframework.stereotype.Service;
 
