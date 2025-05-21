@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import com.mobilerestapi.service.UserService;
 
 @RestController
-@RequestMapping("/api") //http://localhost:8080/api
+@RequestMapping("/api/user") //http://localhost:8080/api
 public class UserController {
 
     @Autowired
@@ -27,12 +27,13 @@ public class UserController {
         BeanUtils.copyProperties(createdUser, returnValue);
         return returnValue;
     }
-    @PutMapping
-    public String updateUser() {
-        return "updateUser";
+   @PutMapping("/{userId}")
+    public String updateUser(@PathVariable String userId) {
+        return "updateUser: " + userId;
     }
-    @DeleteMapping
-    public String deleteUser() {
-        return "deleteUser";
+
+    @DeleteMapping("/{userId}")
+    public String deleteUser(@PathVariable String userId) {
+        return "deleteUser: " + userId;
     }
 }
